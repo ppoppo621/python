@@ -1,15 +1,15 @@
 #################################################################################################################
-# Case: Wireless Base Station Selection for Telecom Company
-# Problem: The Telecom company wants to select p wireless base stations to cover n cities in the area.
-# The distance that a base station can reach is d. If the distance between the base and city is smaller
-# then d, then the city is covered by the base.
-# The purpose is to select ideal cities to install the base stations and cover as many population as possible. 
+# Case: Distribution Center Selection for Furniture Drop-ship Company
+# Problem: The company wants to select p distribution center to cover n cities in the area.
+# The distance that a DC can reach is d. If the distance between the DC and city is smaller
+# then d, then the city is covered by the DC.
+# The purpose is to select ideal cities to establish the DC and cover as many population as possible. 
 #
-# I'm using Greedy Algorithm to solve this problem. The algorithm will give selected base cities, covered cities,
+# I'm using Greedy Algorithm to solve this problem. The algorithm will give selected DC cities, covered cities,
 # and total covered population.
 ##################################################################################################################
 
-# enter number of city, number of base and coverage distance
+# enter number of city, number of DCs and coverage distance
 enter = input('n-cities, p-bases, d-distance:').split()
 n = int(enter[0])
 p = int(enter[1])
@@ -59,10 +59,10 @@ for i in range(n):
     unslt.append(i)
 slt = []
 
-# select base using greedy algrithm
+# select DC using greedy algrithm
 total_pop = 0
 for i in range(p):
-    # start with city 1 as base city
+    # start with city 1 as DC city
     max_pop = 0
     base = 0
     dic = {}
@@ -78,9 +78,9 @@ for i in range(p):
         if pop > max_pop:        # use greedy method to find base with max pop coverage
             max_pop = pop
             base = city
-        #print('base:'+str(city)+'coverage'+str(pop))
+        #print('DC:'+str(city)+'coverage'+str(pop))
         dic[city] = slt
-    print(base,dic[base],max_pop) # base city, cover cities, coverage population 
+    print(base,dic[base],max_pop) # DC city, cover cities, coverage population 
     total_pop += max_pop
     for city in dic[base]:
         unslt.remove(city)
