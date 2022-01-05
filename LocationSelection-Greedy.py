@@ -18,7 +18,7 @@ d = int(enter[2])
 # load city's coordinate and population data
 import csv
 
-csv_file = open('Book1.csv','r')
+csv_file = open('Location_Selection_Input_Data.csv','r')
 reader = csv.reader(csv_file)
 dst=[]
 rowlist=[]
